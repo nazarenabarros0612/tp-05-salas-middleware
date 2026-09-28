@@ -1,0 +1,125 @@
+<section class="formulario-seccion">
+    <div class="formulario-cabecera">
+      <span class="etiqueta"><%= seccion %></span>
+      <h1>Nueva reserva</h1>
+      <p>Completá los datos para registrar un turno.</p>
+    </div>
+  
+    <form class="tarjeta formulario" action="/reservas" method="POST">
+  
+      <% if (error) { %>
+        <p class="error" role="alert">
+          <%= error %>
+        </p>
+      <% } %>
+  
+      <div class="campo">
+        <label for="estudiante">Estudiante</label>
+        <input
+          type="text"
+          id="estudiante"
+          name="estudiante"
+          value="<%= valores.estudiante ?? '' %>"
+        >
+      </div>
+  
+      <div class="campo">
+        <label for="email">Correo electrónico</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value="<%= valores.email ?? '' %>"
+        >
+      </div>
+  
+      <div class="campo">
+        <label for="sala">Sala</label>
+        <select id="sala" name="sala">
+          <option value="">Seleccioná una sala</option>
+  
+          <option
+            value="Sala Norte"
+            <%= valores.sala === "Sala Norte" ? "selected" : "" %>
+          >
+            Sala Norte
+          </option>
+  
+          <option
+            value="Sala Sur"
+            <%= valores.sala === "Sala Sur" ? "selected" : "" %>
+          >
+            Sala Sur
+          </option>
+  
+          <option
+            value="Sala Multimedia"
+            <%= valores.sala === "Sala Multimedia" ? "selected" : "" %>
+          >
+            Sala Multimedia
+          </option>
+        </select>
+      </div>
+  
+      <div class="campo">
+        <label for="fecha">Fecha</label>
+        <input
+          type="date"
+          id="fecha"
+          name="fecha"
+          value="<%= valores.fecha ?? '' %>"
+        >
+      </div>
+  
+      <div class="campo">
+        <label for="turno">Turno</label>
+        <select id="turno" name="turno">
+          <option value="">Seleccioná un turno</option>
+  
+          <option
+            value="Mañana"
+            <%= valores.turno === "Mañana" ? "selected" : "" %>
+          >
+            Mañana
+          </option>
+  
+          <option
+            value="Tarde"
+            <%= valores.turno === "Tarde" ? "selected" : "" %>
+          >
+            Tarde
+          </option>
+  
+          <option
+            value="Noche"
+            <%= valores.turno === "Noche" ? "selected" : "" %>
+          >
+            Noche
+          </option>
+        </select>
+      </div>
+  
+      <div class="campo">
+        <label for="personas">Cantidad de personas</label>
+        <input
+          type="number"
+          id="personas"
+          name="personas"
+          min="1"
+          max="6"
+          value="<%= valores.personas ?? '' %>"
+        >
+      </div>
+  
+      <div class="acciones">
+        <button class="boton" type="submit">
+          Reservar sala
+        </button>
+  
+        <a class="boton boton-secundario" href="/reservas">
+          Cancelar
+        </a>
+      </div>
+  
+    </form>
+  </section>

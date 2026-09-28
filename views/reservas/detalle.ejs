@@ -1,0 +1,47 @@
+<section class="detalle">
+    <div class="tarjeta detalle-card">
+      <div class="card-cabecera">
+        <span class="etiqueta">Reserva #<%= reserva.id %></span>
+        <span class="turno"><%= reserva.turno %></span>
+      </div>
+  
+      <h1><%= reserva.estudiante %></h1>
+  
+      <div class="datos">
+        <div class="dato-grande">
+          <span>Correo electrónico</span>
+          <strong><%= reserva.email %></strong>
+        </div>
+  
+        <div class="dato-grande">
+          <span>Sala</span>
+          <strong><%= reserva.sala %></strong>
+        </div>
+  
+        <div class="dato-grande">
+          <span>Fecha</span>
+          <strong><%= reserva.fecha %></strong>
+        </div>
+  
+        <div class="dato-grande">
+          <span>Turno</span>
+          <strong><%= reserva.turno %></strong>
+        </div>
+  
+        <div class="dato-grande">
+          <span>Personas</span>
+          <strong><%= reserva.personas %></strong>
+        </div>
+      </div>
+  
+      <div class="acciones">
+        <a class="boton boton-secundario" href="/reservas">
+          Volver a reservas
+        </a>
+  
+        <a class="boton" href="/reservas/nueva">
+          Nueva reserva
+        </a>
+      </div>
+    </div>
+  </section>
